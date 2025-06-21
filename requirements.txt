@@ -1,6 +1,5 @@
 aiofiles
 aiohttp
-asyncio
 beautifulsoup4
 dnspython
 ffmpeg-python
@@ -14,16 +13,15 @@ opencv-python
 pillow==9.5.0
 psutil
 py-tgcalls==0.9.7
-pykeyboard
-kurigram==2.1.35
+pytgcrypto
+kurigram
 python-dotenv
 pyyaml
 requests
 speedtest-cli
 spotipy
-tgcrypto
 unidecode
-uvloop
+uvloop; sys_platform != "win32"
 yt-dlp
 youtube-search
 youtube-search-python
