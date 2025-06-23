@@ -3,7 +3,7 @@ import time
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from youtubesearchpython.future import VideosSearch
+from youtubesearchpython.__future__ import VideosSearch
 
 import config
 from AviaxMusic import app
@@ -36,6 +36,7 @@ async def start_pm(client, message: Message, _):
             return await message.reply_photo(
                 photo=config.START_IMG_URL,
                 caption=_["help_1"].format(config.SUPPORT_GROUP),
+                protect_content=True,
                 reply_markup=keyboard,
             )
         if name[0:3] == "sud":
@@ -89,7 +90,7 @@ async def start_pm(client, message: Message, _):
         await message.reply_photo(
             photo=config.START_IMG_URL,
             caption=_["start_2"].format(message.from_user.mention, app.mention, UP, DISK, CPU, RAM),
-        reply_markup=InlineKeyboardMarkup(out),
+            reply_markup=InlineKeyboardMarkup(out),
         )
         if await is_on_off(2):
             return await app.send_message(
